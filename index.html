@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Solar System Viewer | Three.js</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+  </head>
+  <body>
+    <div id="canvas-container">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="info-panel" id="info-panel">
+      <h2 id="planet-name">Sun</h2>
+      <div id="planet-info">The central star of our solar system</div>
+      <div class="planet-stats">
+        <div class="stat">
+          <span>Type:</span>
+          <span id="planet-type">G-type main-sequence star</span>
+        </div>
+        <div class="stat">
+          <span>Diameter:</span>
+          <span id="planet-diameter">1,392,684 km</span>
+        </div>
+        <div class="stat">
+          <span>Distance:</span>
+          <span id="planet-distance">0 km</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="auto-rotate-btn" class="btn active">Auto-Rotate: ON</button>
+      <button id="reset-view-btn" class="btn">Reset View</button>
+      <button id="toggle-orbits-btn" class="btn">Toggle Orbits</button>
+    </div>
+
+    <div class="title">
+      <h1>Interactive Solar System</h1>
+      <p>Click on any celestial body for information</p>
+    </div>
+
+    <script src="js/initScene.js"></script>
+    <script src="js/addLighting.js"></script>
+    <script src="js/createSolarSystem.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/cameraAnimation.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

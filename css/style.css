@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0c1445, #1a237e);
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#canvas {
+  display: block;
+}
+
+.info-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(25, 35, 90, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(64, 128, 255, 0.3);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.info-panel.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.info-panel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #4fc3f7;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(79, 195, 247, 0.3);
+}
+
+#planet-info {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #bbdefb;
+}
+
+.planet-stats {
+  background: rgba(15, 25, 70, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+  font-size: 0.95rem;
+}
+
+.stat:last-child {
+  border-bottom: none;
+}
+
+.stat span:first-child {
+  color: #90caf9;
+}
+
+.stat span:last-child {
+  color: #e3f2fd;
+  text-align: right;
+}
+
+.controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: linear-gradient(to right, #1e88e5, #1565c0);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, #2196f3, #0d47a1);
+}
+
+.btn.active {
+  background: linear-gradient(to right, #00e676, #00c853);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #4fc3f7, #29b6f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(41, 182, 246, 0.3);
+}
+
+.title p {
+  font-size: 1.1rem;
+  color: #bbdefb;
+}
+
+@media (max-width: 768px) {
+  .info-panel {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+  }
+
+  .controls {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+}
+/* Add to the bottom of the file */
+
+/* Star twinkling animation */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
